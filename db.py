@@ -2,8 +2,9 @@ import sqlite3
 
 def get_db():
     ''' creates db connection '''
+    
     sqlite3_file = 'books-microservice.db'
-
+    
     try:
 
         db = sqlite3.connect(sqlite3_file)
