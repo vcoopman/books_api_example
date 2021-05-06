@@ -1,11 +1,6 @@
 import hug
 from db import init_db, get_db
 
-
-# book = {
-#     'msg': "this is a book"
-# }
-
 @hug.startup()
 def start_api(api):
     ''' initial api process'''
@@ -34,8 +29,5 @@ def get_book(
 
             if not result:
                 return { 'msg': "Book not found" }
-
-            print(result)
-            # book = dict(zip(row.keys(), row))
 
             return { 'book' : dict(result) }
