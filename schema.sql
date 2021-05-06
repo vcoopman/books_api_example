@@ -1,10 +1,11 @@
 DROP TABLE IF EXISTS book;
 
-CREATE TABLE book (
-  id INTEGER PRIMARY KEY AUTOINCREMENT,
-  name TEXT NOT NULL,
-  autor TEXT NOT NULL,
-  language TEXT NOT NULL
+CREATE TABLE `book` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `autor` varchar(255) NOT NULL,
+  `language` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
  );
 
 INSERT INTO book(id, name, autor, language) VALUES

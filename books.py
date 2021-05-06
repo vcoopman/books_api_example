@@ -1,6 +1,11 @@
 import hug
 from db import init_db, get_db
 
+
+# book = {
+#     'msg': "this is a book"
+# }
+
 @hug.startup()
 def start_api(api):
     ''' initial api process'''
@@ -20,13 +25,17 @@ def get_book(
     '''Gets book information'''
 
     db = get_db()
-    row = db.execute(
-        "SELECT * FROM book WHERE id = ?",
-        (book_id, )
-    ).fetchone()
 
-    if not row:
-        return { 'msg': "Book not found" }
+    with db:
+        with db.cursor() as cur:
+            sql = "SELECT * FROM book WHERE id = %s"
+            cur.execute(sql, (book_id, ))
+            result = cur.fetchone()
 
-    book = dict(zip(row.keys(), row))
-    return { 'book' : book }
+            if not result:
+                return { 'msg': "Book not found" }
+
+            print(result)
+            # book = dict(zip(row.keys(), row))
+
+            return { 'book' : dict(result) }
