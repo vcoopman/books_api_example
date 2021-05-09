@@ -5,12 +5,7 @@ from db import init_db, get_db
 def start_api(api):
     ''' initial api process'''
 
-    try:
-        init_db()
-
-    except Exception:
-        print("Error start_api")
-        raise
+    init_db()
 
 
 @hug.get('/books/{book_id}')
