@@ -5,7 +5,7 @@ def get_db():
 
     db = pymysql.connect(user='root',
                          password='root',
-                         host='db',
+                         host='mysql',
                          database='books_service',
                          cursorclass=pymysql.cursors.DictCursor
                         )
