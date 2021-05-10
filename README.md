@@ -7,8 +7,7 @@ Developt using the Python Framework Hug.
 This applications servers as an API for books.
 
 # How to run it ?
+(PENDING)
 
-1. Clone the repo
-2. In the repo directory:
-
-          $ docker-compose up
+# TO DO:
+fix db acces from "db" --> "mysql" (for clarity)
