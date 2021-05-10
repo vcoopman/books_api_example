@@ -2,7 +2,7 @@ version: "3.7"
 
 services:
   app:
-    build: ./books
+    build: ./dockerfiles/books
     ports:
       - "8000:8000"
     depends_on:
