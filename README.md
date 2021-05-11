@@ -1,13 +1,7 @@
-# hug_docker_example
+# A books API example
 
-This is a example of a two container application. 
+This application uses two containers.
 
-Developt using the Python Framework Hug. 
+It uses the python framework [Hug](https://www.hug.rest/), for fast development of APIs and MySql as databse. 
 
-This applications servers as an API for books.
-
-# How to run it ?
-(PENDING)
-
-# TO DO:
-fix db acces from "db" --> "mysql" (for clarity)
+In this repository you can find a docker-compose definition and also definitions to deploy using Kubernetes.
